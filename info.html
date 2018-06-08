@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zusatzinfos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../js/leaflet/leaflet.css" />
+    <script src="../js/leaflet/leaflet.js"></script>
+
+
+ <!--//CHANGE###  
+   <script src="data/etappe23.geojson.js"></script> -->
+
+        <script src="../js/leaflet.gpx/gpx.js"></script>  
+    
+    <link rel="stylesheet" href="styles.css" />
+    
+    <script defer src="igcView.js"></script>
+    
+    <script src="../js/leaflet.fullscreen/Leaflet.fullscreen.js"></script>        
+    <link href="../js/leaflet.fullscreen/leaflet.fullscreen.css" rel='stylesheet' /> 
+
+  <!--Stylesheet und plugin-script für elevation anzeige in karte  
+  <script src="../js/d3/d3.v3.min.js" charset="utf-8"></script>
+  <script src="../js/leaflet.elevation/leaflet.elevation-0.0.4.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="../js/leaflet.elevation/leaflet.elevation-0.0.4.css" />-->
+
+    
+</head>
+
+<body>
+    <div id="header">
+        <h2 class="white">Anwendung von Airborne GPX Tracking</h2>
+        <h3 class="white">Zusatzinformationen</h3>
+    </div>
+    
+      <hr />
+
+    <div id="footer" class="gray">
+        <a class="back" href="https://github.com/lauraMaxPixi/lauraMaxPixi.github.io/index.html">
+            <i class="fas fa-arrow-alt-circle-left"></i>Hauptseite</a>
+        <a class="next" href="https://github.com/lauraMaxPixi/lauraMaxPixi.github.io/map.html">Interaktive Karte
+            <i class="fas fa-arrow-alt-circle-right"></i>
+        </a>
+    </div>
+
+  <div class="author">
+       <!--  <img src="images/user.png" alt="Viel Spaß beim Fliegen" />-->
+        <p class="gray">
+           <!-- <a href="mailto:emanuel.pixner@student.uibk.ac.at">Emanuel Pixner</a> 
+            <a href="https://github.com/lauraMaxPixi/lauraMaxPixi.github.io">
+                https://github.com/lauraMaxPixi/lauraMaxPixi.github.io/</a>-->
+        </p>
+    </div>
+
+    <hr />
+    
+    <div class="article">
+        
+ 
+
+        <p>
+               <!--  <strong>Die Tour in Zahlen:</strong>
+               <p>
+                Länge:<span id="get_distance"></span>[m]
+                </p>
+                Tiefster Punkt:<span id="get_elevation_min"></span>[m]</p>
+                Höchster Punkt:<span id="get_elevation_max"></span>[m]</p>
+                Aufstieg:<span id="get_elevation_gain"></span>[m]
+                </p>
+                Abstieg:<span id="get_elevation_loss"></span>[m]
+                </p>
+
+        <div id="map"></div>-->
+
+        <h2>Fluggebiet Innsbruck Umgebung</h2>
+            <h3>Fluggebiet Seegrube an der Nordkette</h3>
+            <p>Die Seegrube ist eigentlich das Fluggebiet der Innsbrucker Gleitschirmflieger. Es lockt nicht nur mit traumhaften Panoramablicken weit über viele Täler hinweg, sondern hat zudem noch ein großes Streckenflugpotential, da die Bergflanken größtenteils OST-WEST ausgerichtet sind. Ob der Trip Richtung Achensee und dann weiter ins Zillertal gehen soll oder Richtung Westen ins Oberland, ist egal. Die fliegerischen Möglichkeiten sind groß und die Ausblicke wirklich beeindruckend. Wer schon einmal in diesem Gebiet einen Blick aus luftigen Höhen erhaschen konnte, der fliegt hier öfter. Mittlerweile wurde die neue Nordkettenbahn auch mit der neu gebauten Hungerburgbahn komplettiert, was jedem Piloten seit Dezember 2007 die Möglichkeit gibt, wieder wie gewohnt in nur wenigen Minuten direkt zur Seegrube zu kommen. Weitere Informationen zur Seegrube als Startplatz findest du <a href="http://www.innsbruckergleitschirmfliegerverein.org/index.php/fluggebiete/nordkette">hier</a>.
+                </p>
+                (Quelle: <a href="http://www.innsbruckergleitschirmfliegerverein.org">IGV - Innsbrucker Gleitschirmfliegerverein</a>) 
+        </p>
+   
+          <h2>Lufträume in Innsbruck</h2>
+            <p>Die auf AustroControl bereitgestellten Luftfahrtdaten unterliegen dem AIRAC System. Das bedeutet, dass die Daten im Zyklus von 28 Tagen berichtigt und somit auf der Website von AustroControl (siehe unten) aktualisiert werden können. Für den Flugbetrieb wichtige Informationen, die ad hoc verlautbart werden müssen, werden mittels NOTAM ausgegeben. Weitere Informationen zu der Regelung der Lufträume findest du <a href="http://www.innsbruckergleitschirmfliegerverein.org/index.php/fluggebiete/ctr">hier</a>. Um die aktuellste Version der Struktur Lufträume in Österreich im Format "OpenAir", "cup" oder "kml" zu erhalten, besuche die Download-Page der  <a href="https://www.austrocontrol.at/piloten/vor_dem_flug/aim_produkte/luftraumstruktur">AustroControl</a>. Zusätzlich gibt es eine schematische  <a href="https://www.austrocontrol.at/jart/prj3/austro_control/data/dokumente/YHKDc_Plakat_Luftraumstruktur.pdf">Abbildung</a> für die Übersicht der vorhandenen Luftraumstruktur.   
+            (Quelle: <a href="https://www.austrocontrol.at/piloten/vor_dem_flug/aim_produkte/luftraumstruktur">AustroControl</a>) 
+        </p>
+        
+        <img  title="Schematische Darstellung der Luftraumstruktur in Österreich" src="images/Luftraumstruktur.jpg" alt="Schematische Darstellung der Luftraumstruktur in Österreich" width="1000">
+    <br>
+    Schematische Darstellung der Luftraumstruktur in Österreich    
+    
+    
+         <h2>Fotoserie</h2>
+    
+          <p>
+              Die folgenden Fotos sind vom Flugtag am 21.04.2018 aufgenommen. Für Infos zu den Bildern einfach mit der Maus über das Bild fahren. 
+
+              (Fotos: Emanuel Pixner)
+              
+    <div> 
+    <img title="Nach dem Halltal" src="https://content.xcontest.org/p1070177_5b1a9bf3299e5.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+        
+<img title="Inntal Richtung Osten"src="https://content.xcontest.org/p1070178_5b1a9bf5305cc.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+
+                  <img title="Achensee" src="https://content.xcontest.org/p1070179_5b1a9bf71e202.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Richtung kufstein" src="https://content.xcontest.org/p1070180_5b1a9bf93062f.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Richtung kufstein" src="https://content.xcontest.org/p1070181_5b1a9bfb2c0f7.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Gegenverkehr" src="https://content.xcontest.org/p1070182_5b1a9bfee6e9d.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Cumuluswolke" src="https://content.xcontest.org/p1070185_5b1a9c01369ef.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Hinterm Rofan-Gebirge richtung Karwendel" src="https://content.xcontest.org/p1070186_5b1a9c0338b4b.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Wolkenstrasse" src="https://content.xcontest.org/p1070187_5b1a9c04e75fb.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Deutschland" src="https://content.xcontest.org/p1070188_5b1a9c067574c.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Karwendel" src="https://content.xcontest.org/p1070190_5b1a9c083e079.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Sylvensteinsee" src="https://content.xcontest.org/p1070194_5b1a9c0a035ff.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+                  
+                  <img title="Nördliche Karwendelkette" src="https://content.xcontest.org/p1070195_5b1a9c0b9dffc.jpg" style="background-color: white; border: 2px solid rgb(211, 211, 211); display: block; position: relative; margin: auto auto 10px; align-self: flex-end; max-width: 100%; height: auto; cursor: pointer;" width="673" height="397">
+          
+     </div>           
+    </p>
+    
+ 
+        <h3>Links</h3>
+        <ul>
+            <li>Informationen zum Innsbrucker Verein:  <a href="http://www.innsbruckergleitschirmfliegerverein.org">IGV - Innsbrucker Gleitschirmfliegerverein</a></li>
+            <li>Interesse an einer Migliedschaft im Verein?:  <a href="http://www.innsbruckergleitschirmfliegerverein.org/index.php/verein/mitgliedschaft">IGV Mitgliedschaft</a></li>
+            <li> Informationen zum Vorarlberger Verein:  <a href="https://www.abwindzentrierer.at">Abwindzentrierer (Vorarlberger Verein)</a></li>
+            <li> Daten zur Luftraumstruktur Österreich:  <a href="https://www.austrocontrol.at/piloten/vor_dem_flug/aim_produkte/luftraumstruktur">AustroControl Luftraumstruktur</a></li>
+             <li>Online Flugplanung:  <a href="https://xcplanner.appspot.com">XCplanner</a></li>
+            <li>Flüge vom 21.4.2018:  <a href="https://www.xcontest.org/world/en/flights-search/?filter%5Bpoint%5D=11.34332+47.29572&filter%5Bradius%5D=5000&filter%5Bmode%5D=START&filter%5Bdate_mode%5D=dmy&filter%5Bdate%5D=2018-04-21&filter%5Bvalue_mode%5D=dst&filter%5Bmin_value_dst%5D=&filter%5Bcatg%5D=&filter%5Broute_types%5D=&filter%5Bavg%5D=&filter%5Bpilot%5D=&list%5Bsort%5D=pts&list%5Bdir%5D=down  ">XContest</a></li>
+
+        </ul>
+    </div>
+ <br>
+ <br>
+  <hr/>
+ <br> <br>
+</body>
+</html>
+
+
+

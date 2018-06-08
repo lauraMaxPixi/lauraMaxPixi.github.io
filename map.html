@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Airborne GPX Tracking - Map</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    <link rel="stylesheet" href="js/leaflet/leaflet.css" />
+    <script src="js/leaflet/leaflet.js"></script>
+
+
+
+   <script src="data/ebner.gpx"></script>
+   <script src="data/korak.gpx"></script>
+   <script src="data/steixner.gpx"></script>
+
+    <!-- <script src="js/leaflet.gpx/gpx.js"></script>	nur, wenn wir was als GPX Track reinladen--!>
+    
+    <link rel="stylesheet" href="styles.css" />
+    
+    <script defer src="igcView.js"></script>
+    
+    <script src="js/leaflet.fullscreen/Leaflet.fullscreen.js"></script>        
+    <link href="js/leaflet.fullscreen/leaflet.fullscreen.css" rel='stylesheet' /> /
+
+  <!--Stylesheet und plugin-script für elevation anzeige in karte  -->
+  <script src="js/d3/d3.v3.min.js" charset="utf-8"></script>
+  <script src="js/leaflet.elevation/leaflet.elevation-0.0.4.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="js/leaflet.elevation/leaflet.elevation-0.0.4.css" />
+   
+</head>
+
+
+
+<body>
+    <div id="header">
+        <h2 class="white">Inntal-Track</h2>
+        <h3 class="white">Vom Hafelekar bis nach Kufstein und Scharnitz</h3>
+    </div>
+
+    <div class="author">
+        <img src="images/user.png" alt="Viel Spaß beim Fliegen!" />
+        <p class="gray">
+            <a href="https://github.com/lauraMaxPixi/lauraMaxPixi.github.io">https://github.com/lauraMaxPixi/lauraMaxPixi.github.io</a>
+        </p>
+    </div>
+
+    <hr />
+    
+    <a href="index.html">
+    <i class="fas fa-arrow-alt-circle-left"></i>Home</a>
+    <a href="info.html">Generelle Info<i class="fas fa-arrow-alt-circle-centre"></i></a>
+    <a href="map.html">
+    Inntaltrack<i class="fas fa-arrow-alt-circle-right"></i></a>
+    <br />
+    <br />
+    <div class="article">
+        <h1>Inntalflug am 21.04.2018</h1>
+        
+        <p>
+        Streckenbeschreibung: <br/>
+        Startpunkt für alle ist der Hafelekar. Während Emanuel Pixner dann bis nach Kundl und von dort ins Karwendel bis kurz vor Scharnitz fliegt, fliegen X, Y und Z bis nach Kufstein und von dort wieder zum Ausgangspunkt zurück. Dadurch ergeben sich voneinander abweichende Flugrouten, die in der Karte nachverfolgt werden können.
+        </p>
+
+        <p>
+        <div id="map"></div>
+
+        <h2>Hinweise von <a href="https://www.xcontest.org/world/en/pilots/detail:pixi">Emanuel "Pixi" Pixner:</a></h2>
+        <p>
+       Spannender und später Start an der Nordwest-Seite am Hafelekar. Bis zum Achensee lief es gut. Dann die Entscheidung, ob ins Karwendel fliegen oder nicht. Habe dann ausgeholt bis Kundl und wäre fast im Talwind abgesoffen. Aufgrund der Schneeverhältnisse und des Wolkenbildes ins Karwendel Richtung Jachenau geflogen. Dann beim Sylvensteinsee fast abgesoffen und auf der Nordseite gesoart, bis ich Anschluss finden konnte. Dann etwas planlos mitten durchs Karwendel und im Karwendeltal der nächste Fehler: Habe auf die Südseite gewechselt (trotz Abschattung). Landung im Bachbett Karwendelbach. Verbesserungsfähig aber lässiger Flug. <br />
+       (Quelle: <a href="https://www.xcontest.org/world/en/flights/detail:pixi/21.04.2018/10:12">XContest</a>) 
+        </p>
+    </div>
+
+    <hr />
+
+     <div id="footer" class="gray">
+        <h2>Impressum</h2>
+        <br/><br/>
+        <div class="author">
+            <img src='./images/laura.jpg' style='display:inline;'/>
+      <p style='display:inline;'> Laura Mainetti - E-Mail: <a href="mailto:laura.mainetti@student.uibk.ac.at">laura.mainetti@student.uibk.ac.at</a></p>
+      <br/><br/>
+      <img src='./images/pixi.jpg' style='display:inline;'/>
+      <p style='display:inline;'> Emanuel "Pixi" Pixner - E-Mail: <a href="mailto:emanuel.pixner@student.uibk.ac.at">emanuel.pixner@student.uibk.ac.at</a> </p>
+      <br/><br/>
+      <img src='./images/max.jpg' style='display:inline;'/>
+      <p style='display:inline;'> Max Kranabetter - E-Mail: <a href="mailto:maximilian.kranabetter@student.uibk.ac.at">maximilian.kranabetter@student.uibk.ac.at</a></p>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+

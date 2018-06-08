@@ -1,0 +1,14 @@
+Als erstes wurde das map.html Dokument angepasst, da als Grundlage das index.html des biketirol-Beispiel herangezogen wurde.
+Als Textquelle wurden hierfür die Beschreibung des Fluges von Emanuel Pixner auf https://www.xcontest.org/world/en/flights/detail:pixi/21.04.2018/10:12 herangezogen. Die Gesamtbeschreibung wurde selbst verfasst anhand der vorhandenen Flugdaten.
+Ebenfalls wurde das User-image angepasst und die entsprechende Quelle im images Ordner gespeichert.
+
+Anschließend wurde versucht, die Grundkarte für map.html, nämlich im igcView.js herzustellen. Als Grundkartenlayer wurden Layer von Openstreetmap und Basemap.at herangezogen (Quelle siehe javascript). Anschließend wurde eine entsprechende Layercontrol gebaut sowie ein metrischer Maßstab.
+
+Einige der plugins waren noch aus dem Biketirol Beispiel vorhanden, die konnten 1:1 übernommen werden (Fullscreen Control als Beispiel). Dafür wurde das gesamte Unterverzeichnis js/ in das Organisationsrepo hochgeladen. Von dort aus konnte es verwendet werden. 
+
+Anschließend wird versucht, Daten einzubinden:
+
+
+Über den Converter http://www.gpsvisualizer.com können die .kmz files in .gpx Format gebracht werden. Dann per https://mapbox.github.io/togeojson/ in geojson Format.
+Anschließend in den Texteditor der Wahl kopieren und als .json speichern. von da an kanns weiter verwendet werden.
+
