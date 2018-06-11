@@ -1,4 +1,4 @@
-{
+let ebnerData = {
     "type": "FeatureCollection",
     "features": [
         {

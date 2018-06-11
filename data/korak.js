@@ -1,4 +1,4 @@
-{
+let korakData = {
     "type": "FeatureCollection",
     "features": [
         {
