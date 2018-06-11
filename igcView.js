@@ -78,6 +78,14 @@ L.control.scale({
 
 
 
+//Höhenprofil definieren und style festlegen: 
+/* let profil = L.control.elevation(
+    {
+        position: "bottomright",
+        theme: "steelblue-theme",
+        collapsed: true, //lässt das Profil aus und einschalten
+    });
+profil.addTo(myMap); */
 
 
 let ebnerTrack = L.geoJSON(ebnerData, {
@@ -94,10 +102,27 @@ let steixnerTrack = L.geoJSON(steixnerData, {
 
 
 let pixnerTrack = L.geoJSON(pixnerData, {
-    color: "green"
+    color: "green",
 }).addTo(pixnerGroup);
 
 
 myMap.fitBounds(pixnerGroup.getBounds());
+
+
+L.control.coordinates({
+	position:"bottomleft", //optional default "bootomright"
+	/*decimals:2, //optional default 4
+	decimalSeperator:".", //optional default "."
+	labelTemplateLat:"Latitude: {y}", //optional default "Lat: {y}"
+	labelTemplateLng:"Longitude: {x}", //optional default "Lng: {x}"
+	enableUserInput:true, //optional default true
+	useDMS:false, //optional default false
+	useLatLngOrder: true, //ordering of labels, default false-> lng-lat
+	markerType: L.marker, //optional default L.marker
+	markerProps: {}, //optional default {},
+	labelFormatterLng : funtion(lng){return lng+" lng"}, //optional default none,
+	labelFormatterLat : funtion(lat){return lat+" lat"}, //optional default none
+	customLabelFcn: function(latLonObj, opts) { "Geohash: " + encodeGeoHash(latLonObj.lat, latLonObj.lng)} //optional default none */
+}).addTo(myMap);
 
 
