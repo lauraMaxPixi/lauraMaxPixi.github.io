@@ -2,12 +2,13 @@ let myMap = L.map("map", {
     fullscreenControl: true,
 });
 
-
+let kapfererGroup = L.featureGroup().addTo(myMap);
 let korakGroup = L.featureGroup().addTo(myMap);
 let ebnerGroup = L.featureGroup().addTo(myMap);
 let steixnerGroup = L.featureGroup().addTo(myMap);
 let pixnerGroup = L.featureGroup().addTo(myMap);
 let markerGroup = L.featureGroup().addTo(myMap);
+
 let steigung = L.featureGroup().addTo(myMap);
 
 
@@ -42,6 +43,7 @@ let myMapControl = L.control.layers({
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
     "Track Pixner": pixnerGroup,
+    "Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
     "Track Steixner": steixnerGroup,
@@ -52,16 +54,7 @@ let myMapControl = L.control.layers({
 
 myMap.addControl(myMapControl);
 
-
-
-
-
-
 myMap.addLayer(markerGroup);
-
-
-
-
 
 myMap.setView([47.163884, 11.378995], 11);
 
@@ -75,18 +68,23 @@ L.control.scale({
 
 }).addTo(myMap);
 
-
-
-
+/* -> Funktioniert nur mit GPX wie bei biketirol...
 //Höhenprofil definieren und style festlegen: 
-/* let profil = L.control.elevation(
+
+let profil = L.control.elevation(
     {
         position: "bottomright",
         theme: "steelblue-theme",
         collapsed: true, //lässt das Profil aus und einschalten
     });
-profil.addTo(myMap); */
+profil.addTo(myMap); 
+*/
 
+/*
+let kapfererTrack = L.geoJSON(kapfererData, {
+    color: "white"
+}).addTo(kapfererGroup);
+*/
 
 let ebnerTrack = L.geoJSON(ebnerData, {
     color: "blue"
@@ -108,7 +106,7 @@ let pixnerTrack = L.geoJSON(pixnerData, {
 
 myMap.fitBounds(pixnerGroup.getBounds());
 
-
+/*
 L.control.coordinates({
 	position:"bottomleft", //optional default "bootomright"
 	/*decimals:2, //optional default 4
@@ -122,7 +120,8 @@ L.control.coordinates({
 	markerProps: {}, //optional default {},
 	labelFormatterLng : funtion(lng){return lng+" lng"}, //optional default none,
 	labelFormatterLat : funtion(lat){return lat+" lat"}, //optional default none
-	customLabelFcn: function(latLonObj, opts) { "Geohash: " + encodeGeoHash(latLonObj.lat, latLonObj.lng)} //optional default none */
+	customLabelFcn: function(latLonObj, opts) { "Geohash: " + encodeGeoHash(latLonObj.lat, latLonObj.lng)} //optional default none 
 }).addTo(myMap);
+*/
 
 
