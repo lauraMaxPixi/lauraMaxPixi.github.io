@@ -2,6 +2,7 @@ let myMap = L.map("map", {
 fullscreenControl: true,
 });
 
+let hash = new L.Hash(myMap);
 
 let kapfererGroup = L.featureGroup().addTo(myMap);
 let korakGroup = L.featureGroup().addTo(myMap);
@@ -42,7 +43,7 @@ let myMapControl = L.control.layers({
     "Basemap": myLayers.geolandbasemap,
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
-    "Track Pixner": pixnerGroup,
+    "Track Pixner + Höhenprofil": pixnerGroup,
     //"Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
@@ -85,20 +86,24 @@ profil.addTo(myMap);
 }).addTo(kapfererGroup); */
 
 let ebnerTrack = L.geoJSON(ebnerData, {
-    color: "blue"
+    color: "green",
+    weight: 3
 }).addTo(ebnerGroup);
 
 let korakTrack = L.geoJSON(korakData, {
-    color: "red"
+    color: "red",
+    weight: 3
 }).addTo(korakGroup);
 
 let steixnerTrack = L.geoJSON(steixnerData, {
-    color: "yellow"
+    color: "purple",
+    weight: 3
 }).addTo(steixnerGroup);
 
 
 let pixnerTrack = L.geoJSON(pixnerData, {
-    color: "green",
+    color: "blue",
+    weight: 5
 }).addTo(pixnerGroup);
 
 
@@ -109,7 +114,7 @@ let heightProfile = L.control.elevation({
     position: "bottomright",
   theme: "steelblue-theme", //default: lime-theme
   width: 600,
-  height: 160,
+  height: 140,
   margins: {
       top: 10,
       right: 20,
@@ -134,6 +139,7 @@ heightProfile.addTo(myMap);
 let pixnerEle = L.geoJSON(pixnerData,{
     onEachFeature: heightProfile.addData.bind(heightProfile) 
 }).addTo(myMap);
+
 
 
 /*
