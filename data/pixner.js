@@ -24664,6 +24664,7 @@ let pixnerData = {
                 ]
             }
         },
+/*
         {
             "type": "Feature",
             "properties": {
@@ -24677,6 +24678,7 @@ let pixnerData = {
                 ]
             }
         },
+
         {
             "type": "Feature",
             "properties": {
@@ -24729,5 +24731,6 @@ let pixnerData = {
                 ]
             }
         }
+*/
     ]
 }

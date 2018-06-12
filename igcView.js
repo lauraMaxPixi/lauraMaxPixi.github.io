@@ -2,14 +2,15 @@ let myMap = L.map("map", {
 fullscreenControl: true,
 });
 
-
+let HotSpotGroup = L.featureGroup().addTo(myMap);
 let kapfererGroup = L.featureGroup().addTo(myMap);
 let korakGroup = L.featureGroup().addTo(myMap);
 let ebnerGroup = L.featureGroup().addTo(myMap);
 let steixnerGroup = L.featureGroup().addTo(myMap);
 let pixnerGroup = L.featureGroup().addTo(myMap);
 
-let steigung = L.featureGroup().addTo(myMap);
+
+//let steigung = L.featureGroup().addTo(myMap);
 
 
 const myLayers = {
@@ -30,9 +31,22 @@ const myLayers = {
             attribution: "Datenquelle: <a href='https://www.basemap.at'>basemap.at</a>"
         }
     ),
+        bmapoverlay: L.tileLayer(
+        "https://{s}.wien.gv.at/basemap/bmapoverlay/normal/google3857/{z}/{y}/{x}.png", {
+            subdomains: ["maps", "maps1", "maps2", "maps3", "maps4"],
+            attribution: "Datenquelle: <a href='https://www.basemap.at'>basemap.at</a>"
+        }
+    ),
+    bmapgrau: L.tileLayer(
+        "https://{s}.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png", {
+            subdomains: ["maps", "maps1", "maps2", "maps3", "maps4"],
+            attribution: "Datenquelle: <a href='https://www.basemap.at'>basemap.at</a>"
+        }
+    ),
+    
 };
 
-myMap.addLayer(myLayers.geolandbasemap);
+myMap.addLayer(myLayers.osm);
 
 
 
@@ -40,19 +54,24 @@ let myMapControl = L.control.layers({
 
     "Openstreetmap": myLayers.osm,
     "Basemap": myLayers.geolandbasemap,
+    "Basemap Grau": myLayers.bmapgrau,
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
+    
 }, {
+    "Beschriftung": myLayers.bmapoverlay,
+    "Thermik-Hotspots": HotSpotGroup,
     "Track Pixner": pixnerGroup,
     //"Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
     "Track Steixner": steixnerGroup,
+ // "Höhenprofil": heightProfile,
     });
 
 myMap.addControl(myMapControl);
 
 
-myMap.setView([47.163884, 11.378995], 11);
+myMap.setView([47.3, 11.4], 10);
 
 myMapControl.expand();
 
@@ -63,7 +82,6 @@ L.control.scale({
     position: "bottomleft"
 
 }).addTo(myMap);
-
 
 
 
@@ -96,13 +114,13 @@ let steixnerTrack = L.geoJSON(steixnerData, {
     color: "yellow"
 }).addTo(steixnerGroup);
 
-
 let pixnerTrack = L.geoJSON(pixnerData, {
     color: "green",
 }).addTo(pixnerGroup);
 
 
 myMap.fitBounds(pixnerGroup.getBounds());
+
 
 //Pixi's solution
 let heightProfile = L.control.elevation({
@@ -125,16 +143,28 @@ let heightProfile = L.control.elevation({
   },
   xTicks: undefined, //number of ticks in x axis, calculated by default according to width
   yTicks: undefined, //number of ticks on y axis, calculated by default according to height
-  collapsed: false,  //collapsed mode, show chart on click or mouseover
+  collapsed: true,  //collapsed mode, show chart on click or mouseover
   imperial: false    //display imperial units instead of metric
 });
 
 heightProfile.addTo(myMap);
 
 let pixnerEle = L.geoJSON(pixnerData,{
-    onEachFeature: heightProfile.addData.bind(heightProfile) 
+    onEachFeature: heightProfile.addData.bind(heightProfile)   
 }).addTo(myMap);
 
+
+//Thermik Hotspots 
+let HotSpots = L.geoJSON(HotSpotData, {
+    color: "green",
+}).addTo(HotSpotGroup);
+
+
+/*
+let steixnerEle = L.geoJSON(steixnerData,{
+    onEachFeature: heightProfile.addData.bind(heightProfile)   
+}).addTo(myMap);
+*/
 
 /*
 let profil = L.control.elevation(

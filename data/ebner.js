@@ -94042,6 +94042,8 @@ let ebnerData = {
                 ]
             }
         },
+        /*
+//Hier sind Punkte abgespeichert, welche als Marker angezeigt werden in der Karten -> ungewünscht! 
         {
             "type": "Feature",
             "properties": {
@@ -94107,5 +94109,6 @@ let ebnerData = {
                 ]
             }
         }
+*/
     ]
 }
