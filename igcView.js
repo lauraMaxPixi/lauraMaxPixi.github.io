@@ -2,12 +2,10 @@ let myMap = L.map("map", {
 fullscreenControl: true,
 });
 
-<<<<<<< HEAD
 let HotSpotGroup = L.featureGroup().addTo(myMap);
-=======
+
 let hash = new L.Hash(myMap);
 
->>>>>>> edf16fd33415f7e2203c23058fc028b569fee4e5
 let kapfererGroup = L.featureGroup().addTo(myMap);
 let korakGroup = L.featureGroup().addTo(myMap);
 let ebnerGroup = L.featureGroup().addTo(myMap);
@@ -63,13 +61,11 @@ let myMapControl = L.control.layers({
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
     
 }, {
-<<<<<<< HEAD
+
     "Beschriftung": myLayers.bmapoverlay,
     "Thermik-Hotspots": HotSpotGroup,
     "Track Pixner": pixnerGroup,
-=======
     "Track Pixner + Höhenprofil": pixnerGroup,
->>>>>>> edf16fd33415f7e2203c23058fc028b569fee4e5
     //"Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
@@ -167,20 +163,18 @@ let pixnerEle = L.geoJSON(pixnerData,{
 }).addTo(myMap);
 
 
-<<<<<<< HEAD
+/*
 //Thermik Hotspots 
 let HotSpots = L.geoJSON(HotSpotData, {
     color: "green",
 }).addTo(HotSpotGroup);
-
+*/
 
 /*
 let steixnerEle = L.geoJSON(steixnerData,{
     onEachFeature: heightProfile.addData.bind(heightProfile)   
 }).addTo(myMap);
 */
-=======
->>>>>>> edf16fd33415f7e2203c23058fc028b569fee4e5
 
 /*
 let profil = L.control.elevation(
