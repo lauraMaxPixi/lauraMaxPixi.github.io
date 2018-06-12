@@ -1,7 +1,5 @@
 let myMap = L.map("map", {
-    fullscreenControl: {
-        pseudoFullscreen: false
-    }
+fullscreenControl: true,
 });
 
 
@@ -110,6 +108,19 @@ myMap.fitBounds(pixnerGroup.getBounds());
 
 
 
+//myMap.addControl(new L.Control.Fullscreen());
+
+/*
+//coordinates versuch
+
+let coordControls = new L.Control.Coordinates().addTo(myMap); // you can send options to the constructor if you want to, otherwise default values are used
+
+// coordControls.addTo(myMap);
+
+myMap.on('click', function(e) {
+	c.setCoordinates(e);
+});
+*/
 
 /*
 L.control.coordinates({
