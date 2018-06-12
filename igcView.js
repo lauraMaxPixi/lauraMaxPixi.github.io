@@ -7,7 +7,7 @@ let korakGroup = L.featureGroup().addTo(myMap);
 let ebnerGroup = L.featureGroup().addTo(myMap);
 let steixnerGroup = L.featureGroup().addTo(myMap);
 let pixnerGroup = L.featureGroup().addTo(myMap);
-let markerGroup = L.featureGroup().addTo(myMap);
+//let markerGroup = L.featureGroup().addTo(myMap);
 
 let steigung = L.featureGroup().addTo(myMap);
 
@@ -68,6 +68,9 @@ L.control.scale({
 
 }).addTo(myMap);
 
+
+
+
 /* -> Funktioniert nur mit GPX wie bei biketirol...
 //Höhenprofil definieren und style festlegen: 
 
@@ -80,11 +83,12 @@ let profil = L.control.elevation(
 profil.addTo(myMap); 
 */
 
-/*
+
+
+
 let kapfererTrack = L.geoJSON(kapfererData, {
     color: "white"
 }).addTo(kapfererGroup);
-*/
 
 let ebnerTrack = L.geoJSON(ebnerData, {
     color: "blue"
@@ -105,6 +109,9 @@ let pixnerTrack = L.geoJSON(pixnerData, {
 
 
 myMap.fitBounds(pixnerGroup.getBounds());
+
+
+
 
 /*
 L.control.coordinates({
