@@ -1,13 +1,15 @@
 let myMap = L.map("map", {
-    fullscreenControl: true,
+    fullscreenControl: {
+        pseudoFullscreen: false
+    }
 });
+
 
 let kapfererGroup = L.featureGroup().addTo(myMap);
 let korakGroup = L.featureGroup().addTo(myMap);
 let ebnerGroup = L.featureGroup().addTo(myMap);
 let steixnerGroup = L.featureGroup().addTo(myMap);
 let pixnerGroup = L.featureGroup().addTo(myMap);
-//let markerGroup = L.featureGroup().addTo(myMap);
 
 let steigung = L.featureGroup().addTo(myMap);
 
@@ -43,18 +45,14 @@ let myMapControl = L.control.layers({
     "basemap.at Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
     "Track Pixner": pixnerGroup,
-    "Track Kapferer": kapfererGroup,
+    //"Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
     "Track Steixner": steixnerGroup,
-       // "Start und Ziel": markerGroup,
-        //"Steigung": steigung,
-
     });
 
 myMap.addControl(myMapControl);
 
-myMap.addLayer(markerGroup);
 
 myMap.setView([47.163884, 11.378995], 11);
 
@@ -86,9 +84,9 @@ profil.addTo(myMap);
 
 
 
-let kapfererTrack = L.geoJSON(kapfererData, {
+/* let kapfererTrack = L.geoJSON(kapfererData, {
     color: "white"
-}).addTo(kapfererGroup);
+}).addTo(kapfererGroup); */
 
 let ebnerTrack = L.geoJSON(ebnerData, {
     color: "blue"
