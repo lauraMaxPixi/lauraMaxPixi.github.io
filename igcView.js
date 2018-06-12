@@ -67,10 +67,10 @@ L.control.scale({
 
 
 
-/* -> Funktioniert nur mit GPX wie bei biketirol...
+ //-> Funktioniert nur mit GPX wie bei biketirol...
 //Höhenprofil definieren und style festlegen: 
 
-let profil = L.control.elevation(
+/*let profil = L.control.elevation(
     {
         position: "bottomright",
         theme: "steelblue-theme",
@@ -78,8 +78,6 @@ let profil = L.control.elevation(
     });
 profil.addTo(myMap); 
 */
-
-
 
 
 /* let kapfererTrack = L.geoJSON(kapfererData, {
@@ -106,9 +104,49 @@ let pixnerTrack = L.geoJSON(pixnerData, {
 
 myMap.fitBounds(pixnerGroup.getBounds());
 
+//Pixi's solution
+let heightProfile = L.control.elevation({
+    position: "bottomright",
+  theme: "steelblue-theme", //default: lime-theme
+  width: 600,
+  height: 160,
+  margins: {
+      top: 10,
+      right: 20,
+      bottom: 30,
+      left: 50
+  },
+  useHeightIndicator: true, //if false a marker is drawn at map position
+  interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
+  hoverNumber: {
+      decimalsX: 3, //decimals on distance (always in km)
+      decimalsY: 0, //deciamls on hehttps://www.npmjs.com/package/leaflet.coordinatesight (always in m)
+      formatter: undefined //custom formatter function may be injected
+  },
+  xTicks: undefined, //number of ticks in x axis, calculated by default according to width
+  yTicks: undefined, //number of ticks on y axis, calculated by default according to height
+  collapsed: false,  //collapsed mode, show chart on click or mouseover
+  imperial: false    //display imperial units instead of metric
+});
+
+heightProfile.addTo(myMap);
+
+let pixnerEle = L.geoJSON(pixnerData,{
+    onEachFeature: heightProfile.addData.bind(heightProfile) 
+}).addTo(myMap);
 
 
-//myMap.addControl(new L.Control.Fullscreen());
+/*
+let profil = L.control.elevation(
+    {
+        position: "bottomright",
+        theme: "steelblue-theme",
+        collapsed: true, //lässt das Profil aus und einschalten
+    });
+profil.addTo(myMap); 
+*/
+
+
 
 /*
 //coordinates versuch
