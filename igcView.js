@@ -148,12 +148,12 @@ profil.addTo(myMap);
 
 
 
-/*
-//coordinates versuch
 
+//coordinates versuch
+/*
 let coordControls = new L.Control.Coordinates().addTo(myMap); // you can send options to the constructor if you want to, otherwise default values are used
 
-// coordControls.addTo(myMap);
+coordControls.addTo(myMap);
 
 myMap.on('click', function(e) {
 	c.setCoordinates(e);
