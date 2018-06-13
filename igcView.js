@@ -62,7 +62,7 @@ let myMapControl = L.control.layers({
     
 }, {
 
-    //"Beschriftung": myLayers.bmapoverlay,
+    "Beschriftung": myLayers.bmapoverlay,
     //"Thermik-Hotspots": HotSpotGroup,
     "Track Pixner": pixnerGroup,
     //"Track Pixner + Höhenprofil": pixnerGroup,
