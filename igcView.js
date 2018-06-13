@@ -2,7 +2,7 @@ let myMap = L.map("map", {
 fullscreenControl: true,
 });
 
-let HotSpotGroup = L.featureGroup().addTo(myMap);
+//let HotSpotGroup = L.featureGroup().addTo(myMap);
 
 let hash = new L.Hash(myMap);
 
@@ -62,10 +62,10 @@ let myMapControl = L.control.layers({
     
 }, {
 
-    "Beschriftung": myLayers.bmapoverlay,
-    "Thermik-Hotspots": HotSpotGroup,
+    //"Beschriftung": myLayers.bmapoverlay,
+    //"Thermik-Hotspots": HotSpotGroup,
     "Track Pixner": pixnerGroup,
-    "Track Pixner + Höhenprofil": pixnerGroup,
+    //"Track Pixner + Höhenprofil": pixnerGroup,
     //"Track Kapferer": kapfererGroup,
     "Track Korak": korakGroup,
     "Track Ebner": ebnerGroup,
